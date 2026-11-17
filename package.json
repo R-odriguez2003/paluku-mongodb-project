@@ -1,0 +1,16 @@
+{
+  "name": "hotel-booking",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "services/web",
+    "services/functions"
+  ],
+  "scripts": {
+    "build": "npm --prefix services/web run build && npm --prefix services/functions run build",
+    "dev": "concurrently \"npm --prefix services/web run dev -- --host 0.0.0.0\" \"npm --prefix services/functions run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
